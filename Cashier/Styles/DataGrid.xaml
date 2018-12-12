@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Cashier.Styles">
+    
+
+    <Style TargetType="DataGridColumnHeader"
+           x:Key="BlueHeader">
+        <Setter Property="Background" 
+                   Value="{StaticResource MainWindowBackgroundBrush}"/>
+        <Setter Property="Foreground"
+                Value="{StaticResource ForegroundLightBrush}"/>
+        <Setter Property="HorizontalContentAlignment"
+                Value="Center"/>
+        <Setter Property="VerticalContentAlignment"
+                Value="Center"/>
+        <Setter Property="FontSize"
+                Value="{StaticResource FontSizeLarge}"/>
+    </Style>
+   <!--BasedOn="{StaticResource {x:Type DataGridCell}}"-->
+    <Style TargetType="DataGridCell"
+           BasedOn="{StaticResource {x:Type DataGridCell}}"
+           x:Key="Double2">
+        <Setter Property="TextBlock.HorizontalAlignment"
+                    Value="Stretch"/>
+        <Setter Property="TextBlock.TextAlignment"
+                Value="Right"/>
+        <Setter Property="TextBlock.Margin"
+                Value="0,0,1,0"/>
+    </Style>
+
+    <Style TargetType="DataGridRow">
+        <Style.Triggers>
+            <Trigger Property="IsSelected"
+                     Value="True">
+                <Setter Property="BorderBrush"
+                        Value="{StaticResource BootstrapDangerBrush}"/>
+                <Setter Property="BorderThickness"
+                        Value="0,0,0,3"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
